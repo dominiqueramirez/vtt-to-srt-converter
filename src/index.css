@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900;
+  }
+
+  a {
+    @apply text-[#003d7a] hover:text-[#001a4d] transition-colors;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-[#003d7a] text-white font-semibold rounded-lg hover:bg-[#001a4d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-slate-200 text-slate-900 font-semibold rounded-lg hover:bg-slate-300 transition-colors shadow-md hover:shadow-lg;
+  }
+
+  .file-input {
+    @apply block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#003d7a] file:text-white hover:file:bg-[#001a4d] cursor-pointer;
+  }
+
+  .textarea-custom {
+    @apply w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-[#003d7a] focus:outline-none focus:ring-2 focus:ring-[#003d7a]/50 font-mono text-sm resize-y;
+  }
+
+  .alert-error {
+    @apply bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg;
+  }
+
+  .alert-error h4 {
+    @apply text-red-800 font-bold text-lg;
+  }
+
+  .alert-error p {
+    @apply text-red-700;
+  }
+}
