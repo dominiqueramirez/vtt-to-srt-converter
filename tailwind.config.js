@@ -7,19 +7,33 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          900: '#1e3a8a',
-        },
+        // VA Design System (VADS) semantic color tokens
         va: {
-          blue: '#003d7a',
-          darkblue: '#001a4d',
-          lightblue: '#4a90e2',
-        }
+          primary: '#005ea2',
+          'primary-dark': '#1a4480',
+          'primary-darker': '#162e51',
+          'primary-light': '#73b3e7',
+          'primary-lighter': '#d9e8f6',
+          link: '#005ea2',
+          'link-active': '#0b4778',
+          ink: '#1b1b1b',
+          'text-muted': '#71767a',
+          'base-dark': '#565c65',
+          'base-darker': '#3d4551',
+          'base-light': '#a9aeb1',
+          'base-lighter': '#dfe1e2',
+          'base-lightest': '#f0f0f0',
+          'inset-bg': '#e7f6f8',
+          error: '#d54309',
+          'error-bg': '#f4e3db',
+          'error-darker': '#6f3331',
+          focus: '#face00',
+        },
+      },
+      fontFamily: {
+        sans: ["'Source Sans 3'", "'Source Sans Pro'", "'Helvetica Neue'", 'Helvetica', 'Roboto', 'Arial', 'sans-serif'],
+        serif: ['Bitter', 'Georgia', 'Cambria', "'Times New Roman'", 'Times', 'serif'],
+        mono: ["'Roboto Mono'", "'Bitstream Vera Sans Mono'", 'Consolas', 'Courier', 'monospace'],
       },
     },
   },

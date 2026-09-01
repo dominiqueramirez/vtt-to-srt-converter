@@ -3,41 +3,67 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-family: theme('fontFamily.sans');
+  }
+
   body {
-    @apply bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900;
+    @apply bg-white text-va-ink;
+    font-family: theme('fontFamily.sans');
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.serif');
+    @apply text-va-ink;
   }
 
   a {
-    @apply text-[#003d7a] hover:text-[#001a4d] transition-colors;
+    @apply text-va-link underline;
+  }
+
+  a:hover {
+    @apply text-va-link-active;
+  }
+
+  /* VADS focus outline */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 0.25rem solid theme('colors.va.focus');
+    outline-offset: 0;
   }
 }
 
 @layer components {
-  .btn-primary {
-    @apply px-6 py-3 bg-[#003d7a] text-white font-semibold rounded-lg hover:bg-[#001a4d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg;
+  /* Primary button (VADS) */
+  .va-btn {
+    @apply inline-flex items-center justify-center px-5 py-3 bg-va-primary text-white text-base font-bold rounded no-underline transition-colors hover:bg-va-primary-dark disabled:bg-va-base-light disabled:cursor-not-allowed;
   }
 
-  .btn-secondary {
-    @apply px-6 py-3 bg-slate-200 text-slate-900 font-semibold rounded-lg hover:bg-slate-300 transition-colors shadow-md hover:shadow-lg;
+  /* Secondary button (VADS): white with primary border/text */
+  .va-btn-secondary {
+    @apply inline-flex items-center justify-center px-5 py-3 bg-white text-va-primary text-base font-bold rounded no-underline border-2 border-va-primary transition-colors hover:bg-va-primary-lighter;
   }
 
-  .file-input {
-    @apply block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#003d7a] file:text-white hover:file:bg-[#001a4d] cursor-pointer;
+  /* File input styled per VADS input */
+  .va-file-input {
+    @apply block w-full text-base text-va-base-darker border border-va-base-dark rounded bg-white
+      file:mr-4 file:py-3 file:px-5 file:border-0 file:text-base file:font-bold
+      file:bg-va-base-lightest file:text-va-primary hover:file:bg-va-primary-lighter file:cursor-pointer cursor-pointer;
   }
 
-  .textarea-custom {
-    @apply w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-[#003d7a] focus:outline-none focus:ring-2 focus:ring-[#003d7a]/50 font-mono text-sm resize-y;
+  .va-textarea {
+    @apply w-full px-3 py-2 border border-va-base-dark rounded font-mono text-sm text-va-ink bg-white resize-y;
   }
 
-  .alert-error {
-    @apply bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg;
+  /* VADS error alert */
+  .va-alert-error {
+    @apply bg-va-error-bg border-l-[0.5rem] border-va-error p-4;
   }
 
-  .alert-error h4 {
-    @apply text-red-800 font-bold text-lg;
-  }
-
-  .alert-error p {
-    @apply text-red-700;
+  /* VADS informational inset / callout */
+  .va-inset {
+    @apply bg-va-inset-bg border-l-[0.5rem] border-va-primary p-6;
   }
 }
